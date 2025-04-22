@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJAX - Web-programozás 1 Házi Feladat</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="ajax.css">
 </head>
 <body>
     <!-- Fejléc rész -->
@@ -40,12 +41,126 @@
         
         <!-- Tartalmi rész - AJAX oldal tartalma -->
         <div class="content">
-            <h2>AJAX Műveletek</h2>
-            <p>Ezen az oldalon az AJAX (Asynchronous JavaScript And XML) használatát mutatjuk be egy API-val való kommunikációhoz.</p>
-            <p>Az API CRUD műveleteket támogat (Create, Read, Update, Delete).</p>
+            <h2>AJAX API Kommunikáció</h2>
+            <p>Ezen az oldalon egy API-val kommunikálunk AJAX segítségével. Az API CRUD műveleteket biztosít adatok kezeléséhez.</p>
             
-            <!-- Itt lesz az AJAX tartalom -->
-            <p>Az AJAX példa hamarosan betöltődik...</p>
+            <!-- CRUD műveleti szekciókat tartalmazó konténer -->
+            <div class="ajax-container">
+                <!-- 1. Read művelet -->
+                <section class="muvelet-blokk">
+                    <h3>Adatok lekérdezése (Read)</h3>
+                    <p>Az API-ból lekérdezett adatok megjelenítése.</p>
+                    
+                    <div class="button-container">
+                        <button id="adatok-lekerdezese">Adatok lekérdezése</button>
+                    </div>
+                    
+                    <div id="adatok-container" class="eredmeny-container">
+                        <!-- Itt fognak megjelenni a lekérdezett adatok -->
+                        <p class="info-uzenet">Kattintson a gombra az adatok lekérdezéséhez.</p>
+                    </div>
+                    
+                    <div id="statisztika-container" class="eredmeny-container" style="display:none;">
+                        <h4>Magasság (height) statisztika:</h4>
+                        <p id="height-statisztika"></p>
+                    </div>
+                </section>
+                
+                <!-- 2. Create művelet -->
+                <section class="muvelet-blokk">
+                    <h3>Új rekord létrehozása (Create)</h3>
+                    <p>Új rekord hozzáadása az adatbázishoz.</p>
+                    
+                    <form id="create-form" class="ajax-form">
+                        <div class="form-group">
+                            <label for="create-name">Név (kötelező, max. 30 karakter):</label>
+                            <input type="text" id="create-name" maxlength="30" required>
+                            <span class="hiba-uzenet" id="create-name-hiba"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="create-height">Magasság (kötelező, max. 30 karakter):</label>
+                            <input type="text" id="create-height" maxlength="30" required>
+                            <span class="hiba-uzenet" id="create-height-hiba"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="create-weight">Súly (kötelező, max. 30 karakter):</label>
+                            <input type="text" id="create-weight" maxlength="30" required>
+                            <span class="hiba-uzenet" id="create-weight-hiba"></span>
+                        </div>
+                        
+                        <div class="button-container">
+                            <button type="submit">Rekord létrehozása</button>
+                        </div>
+                    </form>
+                    
+                    <div id="create-eredmeny" class="eredmeny-container">
+                        <!-- Itt jelenik meg a művelet eredménye -->
+                    </div>
+                </section>
+                
+                <!-- 3. Update művelet -->
+                <section class="muvelet-blokk">
+                    <h3>Rekord módosítása (Update)</h3>
+                    <p>Meglévő rekord adatainak módosítása.</p>
+                    
+                    <div class="id-container">
+                        <div class="form-group">
+                            <label for="update-id">Rekord ID:</label>
+                            <input type="number" id="update-id" required>
+                        </div>
+                        <button id="get-data-for-id">Adatok lekérdezése</button>
+                    </div>
+                    
+                    <form id="update-form" class="ajax-form">
+                        <div class="form-group">
+                            <label for="update-name">Név (kötelező, max. 30 karakter):</label>
+                            <input type="text" id="update-name" maxlength="30" required>
+                            <span class="hiba-uzenet" id="update-name-hiba"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="update-height">Magasság (kötelező, max. 30 karakter):</label>
+                            <input type="text" id="update-height" maxlength="30" required>
+                            <span class="hiba-uzenet" id="update-height-hiba"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="update-weight">Súly (kötelező, max. 30 karakter):</label>
+                            <input type="text" id="update-weight" maxlength="30" required>
+                            <span class="hiba-uzenet" id="update-weight-hiba"></span>
+                        </div>
+                        
+                        <div class="button-container">
+                            <button type="submit">Rekord módosítása</button>
+                        </div>
+                    </form>
+                    
+                    <div id="update-eredmeny" class="eredmeny-container">
+                        <!-- Itt jelenik meg a művelet eredménye -->
+                    </div>
+                </section>
+                
+                <!-- 4. Delete művelet -->
+                <section class="muvelet-blokk">
+                    <h3>Rekord törlése (Delete)</h3>
+                    <p>Meglévő rekord törlése az adatbázisból.</p>
+                    
+                    <div class="form-group">
+                        <label for="delete-id">Rekord ID:</label>
+                        <input type="number" id="delete-id" required>
+                    </div>
+                    
+                    <div class="button-container">
+                        <button id="delete-button">Rekord törlése</button>
+                    </div>
+                    
+                    <div id="delete-eredmeny" class="eredmeny-container">
+                        <!-- Itt jelenik meg a művelet eredménye -->
+                    </div>
+                </section>
+            </div>
         </div>
     </div>
     
@@ -53,5 +168,7 @@
     <footer>
         <p>Készítette: Becskereki Sándor (NEPTUN: BXSIE5)</p>
     </footer>
+
+    <script src="ajax.js"></script>
 </body>
 </html>
