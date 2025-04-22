@@ -1,0 +1,151 @@
+/* AJAX oldal stílusai */
+
+.ajax-container {
+    margin-top: 20px;
+}
+
+.muvelet-blokk {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.muvelet-blokk h3 {
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4CAF50;
+    color: #333;
+}
+
+/* Űrlap stílusok */
+.ajax-form {
+    margin-top: 15px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group input:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.hiba-uzenet {
+    color: #f44336;
+    font-size: 0.8em;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Gomb stílusok */
+.button-container {
+    margin: 15px 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #388E3C;
+}
+
+#get-data-for-id {
+    background-color: #2196F3;
+}
+
+#get-data-for-id:hover {
+    background-color: #0b7dda;
+}
+
+#delete-button {
+    background-color: #f44336;
+}
+
+#delete-button:hover {
+    background-color: #d32f2f;
+}
+
+/* Eredmény konténerek */
+.eredmeny-container {
+    margin-top: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #fff;
+    min-height: 30px;
+}
+
+.info-uzenet {
+    color: #666;
+    font-style: italic;
+}
+
+.siker-uzenet {
+    color: #388E3C;
+    font-weight: bold;
+}
+
+.hiba-uzenet-container {
+    color: #f44336;
+    font-weight: bold;
+}
+
+/* Adatok táblázat */
+.adatok-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.adatok-tabla th,
+.adatok-tabla td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.adatok-tabla th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.adatok-tabla tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* ID selector szekció */
+.id-container {
+    display: flex;
+    gap: 10px;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.id-container .form-group {
+    flex: 1;
+    margin-bottom: 0;
+}
