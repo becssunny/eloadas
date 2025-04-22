@@ -1,0 +1,2 @@
+# eloadas
+Előadás beadandó feladat
