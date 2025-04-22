@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 - Web-programozás 1 Házi Feladat</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="html5.css">
+</head>
+<body>
+    <!-- Fejléc rész -->
+    <header>
+        <h1>Web-programozás-1 Előadás Házi feladat</h1>
+    </header>
+    
+    <!-- Navigációs menü -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Főoldal</a></li>
+            <li><a href="tablazat.html">Táblázat</a></li>
+            <li><a href="html5.html" class="aktiv">HTML5</a></li>
+            <li><a href="chartjs.html">ChartJS</a></li>
+            <li><a href="ajax.html">AJAX</a></li>
+            <li><a href="oojs.html">OOJS</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Oldalsáv -->
+        <aside>
+            <h3>Navigáció</h3>
+            <ul>
+                <li><a href="index.html">Főoldal</a></li>
+                <li><a href="tablazat.html">Táblázat</a></li>
+                <li><a href="html5.html">HTML5</a></li>
+                <li><a href="chartjs.html">ChartJS</a></li>
+                <li><a href="ajax.html">AJAX</a></li>
+                <li><a href="oojs.html">OOJS</a></li>
+            </ul>
+        </aside>
+        
+        <!-- Tartalmi rész - HTML5 oldal tartalma -->
+        <div class="content">
+            <h2>HTML5 Funkciók</h2>
+            <p>Ez az oldal különböző HTML5 funkciókat mutat be egyszerű példákon keresztül.</p>
+            
+            <div class="html5-peldak">
+                <!-- 1. Web Storage -->
+                <section class="pelda-blokk" id="web-storage">
+                    <h3>1. Web Storage</h3>
+                    <p>A Web Storage lehetővé teszi adatok tárolását a böngészőben, akár a böngésző bezárása után is (localStorage) vagy csak az adott munkamenet idejére (sessionStorage).</p>
+                    
+                    <div class="pelda-tartalom">
+                        <h4>LocalStorage példa</h4>
+                        <div class="input-group">
+                            <label for="localStorage-adat">Adat:</label>
+                            <input type="text" id="localStorage-adat" value="Ez egy tárolt adat">
+                        </div>
+                        <div class="button-group">
+                            <button id="mentes-localStorage">Mentés LocalStorage-ba</button>
+                            <button id="olvasas-localStorage">Olvasás LocalStorage-ból</button>
+                            <button id="torles-localStorage">Törlés LocalStorage-ból</button>
+                        </div>
+                        <div class="eredmeny" id="localStorage-eredmeny"></div>
+                        
+                        <h4>SessionStorage példa</h4>
+                        <div class="input-group">
+                            <label for="sessionStorage-adat">Adat:</label>
+                            <input type="text" id="sessionStorage-adat" value="Ez egy ideiglenes adat">
+                        </div>
+                        <div class="button-group">
+                            <button id="mentes-sessionStorage">Mentés SessionStorage-ba</button>
+                            <button id="olvasas-sessionStorage">Olvasás SessionStorage-ból</button>
+                        </div>
+                        <div class="eredmeny" id="sessionStorage-eredmeny"></div>
+                    </div>
+                </section>
+                
+                <!-- 2. Web Workers -->
+                <section class="pelda-blokk" id="web-workers">
+                    <h3>2. Web Workers</h3>
+                    <p>A Web Workers lehetővé teszik, hogy JavaScript kódot futtassunk a háttérben, anélkül, hogy ez blokkolná a felhasználói felületet.</p>
+                    
+                    <div class="pelda-tartalom">
+                        <div class="input-group">
+                            <label for="primszam-hatar">Prímszámok keresése eddig:</label>
+                            <input type="number" id="primszam-hatar" value="1000" min="10" max="1000000">
+                        </div>
+                        <div class="button-group">
+                            <button id="primerek-worker-nelkul">Számolás Worker nélkül</button>
+                            <button id="primkerek-workerrel">Számolás Web Worker-rel</button>
+                        </div>
+                        <div class="eredmeny" id="worker-eredmeny">Itt fognak megjelenni az eredmények...</div>
+                    </div>
+                </section>
+                
+                <!-- 3. Server-Sent Events -->
+                <section class="pelda-blokk" id="server-sent-events">
+                    <h3>3. Server-Sent Events (Szimulált)</h3>
+                    <p>A Server-Sent Events lehetővé teszik a szerver számára, hogy adatokat küldjön a kliensnek anélkül, hogy a kliens azt külön kérné.</p>
+                    
+                    <div class="pelda-tartalom">
+                        <div class="button-group">
+                            <button id="sse-start">Események indítása</button>
+                            <button id="sse-stop">Események leállítása</button>
+                        </div>
+                        <div class="eredmeny" id="sse-eredmeny">
+                            <p>A szimulált események itt fognak megjelenni...</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 4. Geolocation API -->
+                <section class="pelda-blokk" id="geolocation">
+                    <h3>4. Geolocation API</h3>
+                    <p>A Geolocation API lehetővé teszi a böngésző számára, hogy lekérje a felhasználó földrajzi helyzetét.</p>
+                    
+                    <div class="pelda-tartalom">
+                        <div class="button-group">
+                            <button id="pozicio-lekerdezes">Pozíció lekérdezése</button>
+                        </div>
+                        <div class="eredmeny" id="geo-eredmeny">Ide kerül a pozíció...</div>
+                    </div>
+                </section>
+                
+                <!-- 5. Drag and Drop API -->
+                <section class="pelda-blokk" id="drag-drop">
+                    <h3>5. Drag and Drop API</h3>
+                    <p>A Drag and Drop API lehetővé teszi elemek húzását és ejtését a felhasználói felületen.</p>
+                    
+                    <div class="pelda-tartalom">
+                        <div class="drag-container">
+                            <div class="drag-source">
+                                <div class="draggable" id="drag1" draggable="true">Húzz el engem!</div>
+                            </div>
+                            <div class="drop-target" id="drop-target">Ide dobd!</div>
+                        </div>
+                        <div class="eredmeny" id="drag-drop-eredmeny"></div>
+                    </div>
+                </section>
+                
+                <!-- 6. Canvas -->
+                <section class="pelda-blokk" id="canvas">
+                    <h3>6. Canvas</h3>
+                    <p>A Canvas egy rajzolófelület, amelyre JavaScript segítségével rajzolhatunk.</p>
+                    
+                    <div class="pelda-tartalom">
+                        <canvas id="myCanvas" width="400" height="200">
+                            A böngésződ nem támogatja a canvas elemet.
+                        </canvas>
+                        <div class="button-group">
+                            <button id="rajzol-teglalap">Téglalap rajzolása</button>
+                            <button id="rajzol-kor">Kör rajzolása</button>
+                            <button id="rajzol-vonal">Vonal rajzolása</button>
+                            <button id="canvas-torles">Törlés</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- 7. SVG -->
+                <section class="pelda-blokk" id="svg">
+                    <h3>7. SVG</h3>
+                    <p>Az SVG (Scalable Vector Graphics) egy XML alapú formátum a kétdimenziós vektorgrafika leírására.</p>
+                    
+                    <div class="pelda-tartalom">
+                        <svg id="mySVG" width="400" height="200">
+                            <rect id="svg-teglalap" x="50" y="20" width="150" height="100" 
+                                  fill="blue" stroke="black" stroke-width="2"></rect>
+                            <circle id="svg-kor" cx="280" cy="70" r="50" 
+                                    fill="red" stroke="black" stroke-width="2"></circle>
+                            <line id="svg-vonal" x1="50" y1="150" x2="350" y2="150" 
+                                  stroke="green" stroke-width="3"></line>
+                        </svg>
+                        <div class="button-group">
+                            <button id="svg-animacio">Animálás</button>
+                            <button id="svg-alaphelyzet">Visszaállítás</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lábléc -->
+    <footer>
+        <p>Készítette: Becskereki Sándor (NEPTUN: BXSIE5)</p>
+    </footer>
+
+    <script src="html5.js"></script>
+</body>
+</html>
